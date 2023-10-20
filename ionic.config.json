@@ -1,0 +1,7 @@
+{
+  "name": "conceptos-basicos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
