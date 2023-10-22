@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Authors } from 'src/app/core/interface/authors';
 
 @Component({
@@ -8,15 +8,11 @@ import { Authors } from 'src/app/core/interface/authors';
 })
 export class AuthorsInfoComponent  implements OnInit {
 
-  constructor(
-    public authors:Authors[]
-    ) {}
+  @Input() user:Authors | null=null;
 
-  ngOnInit():void {
-    this.authors = [
-      {name:"Jesús", surname:"Herrera Sánchez", github:new URL("https://github.com/Jesushs4")},
-      {name:"Denisa Ramona", surname:"Belean", github:new URL("https://github.com/denibel04")}
-    ]
-  }
+
+  constructor() {}
+
+  ngOnInit():void {}
 
 }
