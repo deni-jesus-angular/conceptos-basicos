@@ -7,4 +7,10 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
+  <div class="authors-panel">
+    <app-user-info 
+      *ngFor="let author of authors.authors | async" 
+      [author]="author">
+    </app-user-info>
+  </div>
 </ion-content>
