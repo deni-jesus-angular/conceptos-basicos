@@ -18,4 +18,5 @@ export class AuthorsInfoComponent  implements OnInit {
       {name:"Denisa Ramona", surname:"Belean", github:new URL("https://github.com/denibel04")}
     ]
   }
+
 }
