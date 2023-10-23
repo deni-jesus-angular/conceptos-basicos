@@ -5,6 +5,9 @@ import { Characters } from '../interface/characters';
 @Injectable({
   providedIn: 'root'
 })
+
+
+
 export class CharacterService {
 
   _characters:BehaviorSubject<Characters[]> = new BehaviorSubject<Characters[]>([]);
@@ -35,6 +38,21 @@ export class CharacterService {
         observer.next(_characters);
       } else {
         console.log("Character not found");
+      }
+      observer.complete();
+    })
+  }
+
+  public deleteCharacter(character:Characters):Observable<Characters> {
+    return new Observable(observer => {
+      var _characters = [...this._characters.value];
+      var index = _characters.findIndex(c=>c.id==character.id);
+      if (index<0){
+        console.log("Character not found")
+      } else {
+        _characters = [..._characters.slice(0,index),..._characters.slice(index+1)];
+        this._characters.next(_characters);
+        observer.next(character);
       }
       observer.complete();
     })
