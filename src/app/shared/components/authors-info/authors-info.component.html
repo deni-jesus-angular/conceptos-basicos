@@ -4,7 +4,7 @@
       <ion-avatar>
         <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
       </ion-avatar>
-      <div class="ion-margin-start user-name" color="tertiary" >{{author?.name | titlecase}} {{author?.surname | uppercase }}</div>
+      <div class="ion-margin-start user-name" color="tertiary" >{{authors?.name | titlecase}} {{authors?.surname | titlecase }}</div>
         </div>
     
     
@@ -13,11 +13,11 @@
     <ion-item>
       <ion-label>
         <h3>Nombre</h3>
-        <ion-text color="medium" class="ion-margin-start">{{author?.name}}</ion-text>
+        <ion-text color="medium" class="ion-margin-start">{{authors?.name}}</ion-text>
         <h3>Apellidos</h3>
-        <ion-text color="medium" class="ion-margin-start">{{author?.surname}}</ion-text>
+        <ion-text color="medium" class="ion-margin-start">{{authors?.surname}}</ion-text>
         <h3>github</h3>
-        <ion-text color="medium" class="ion-margin-start">{{author?.github}}</ion-text>
+        <ion-text color="medium" class="ion-margin-start">{{authors?.github}}</ion-text>
       </ion-label>
     </ion-item>
   </ion-card-content>
