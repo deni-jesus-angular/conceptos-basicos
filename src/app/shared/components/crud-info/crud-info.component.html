@@ -1,0 +1,27 @@
+<ion-card>
+  <ion-card-header>
+    <div style="display:flex;margin:10px;align-items:flex-end ">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <div class="ion-margin-start user-name" color="tertiary" >{{character?.name | titlecase}} from {{character?.source}}</div>
+      
+    </div>
+    
+    
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label>
+        <h3>Name</h3>
+        <ion-text color="medium" class="ion-margin-start">{{character?.name}}</ion-text>
+        <h3>Surname</h3>
+        <ion-text color="medium" class="ion-margin-start">{{character?.surname}}</ion-text>
+        <h3>Source and chapters</h3>
+        <ion-text color="medium" class="ion-margin-start">{{character?.source}} with {{character?.sourceChapters}} chapters</ion-text>
+        <h3>Type of source</h3>
+        <ion-text color="medium" class="ion-margin-start">{{character?.sourceType}}</ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
