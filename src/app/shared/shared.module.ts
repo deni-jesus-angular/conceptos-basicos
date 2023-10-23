@@ -20,7 +20,8 @@ import { CrudInfoComponent } from './components/crud-info/crud-info.component';
     CommonModule,
     IonicModule,
     FormsModule,
-    AuthorsInfoComponent
+    AuthorsInfoComponent,
+    CrudInfoComponent,
   ]
 })
 export class SharedModule { }

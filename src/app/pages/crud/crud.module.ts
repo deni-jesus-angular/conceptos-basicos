@@ -7,13 +7,12 @@ import { IonicModule } from '@ionic/angular';
 import { CrudPageRoutingModule } from './crud-routing.module';
 
 import { CrudPage } from './crud.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CrudPageRoutingModule
+    CrudPageRoutingModule,
+    SharedModule
   ],
   declarations: [CrudPage]
 })
