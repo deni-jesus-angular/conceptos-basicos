@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController} from '@ionic/angular';
 import { Characters } from 'src/app/core/interface/characters';
 import { CharacterService } from 'src/app/core/services/character.service';
 import { CharacterFormComponent } from 'src/app/shared/components/character-form/character-form.component';
