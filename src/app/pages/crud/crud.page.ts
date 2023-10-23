@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterService } from 'src/app/core/services/character.service';
 
 @Component({
   selector: 'app-crud',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public characterService:CharacterService,
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void{
+    this.characterService.getAll().subscribe();
   }
 
-}
+  
+  }
+

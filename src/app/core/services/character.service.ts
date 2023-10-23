@@ -15,10 +15,13 @@ export class CharacterService {
   public getAll():Observable<Characters[]> {
     return new Observable(observer => {
       var _characters = [
-        {id: 1, name:"a", surname:"b", source:"c", sourceType: "d", sourceChapters:1},
-        {id: 2, name:"aa", surname:"bb", source:"cc", sourceType: "dd", sourceChapters:1},
-        {id: 3, name:"aaa", surname:"bbb", source:"ccc", sourceType: "ddd", sourceChapters:1},
+        {id: 1, name:"Naruto", surname:"Uzumaki", source:"Naruto Shippuden", sourceType: "Anime", sourceChapters:582},
+        {id: 2, name:"Geralt", surname:"De Rivia", source:"The Witcher", sourceType: "TV Series", sourceChapters:31},
+        {id: 3, name:"Coco", surname:"", source:"Witch Hat Atelier", sourceType: "Manga", sourceChapters:81},
       ]
+      observer.next(_characters);
+      this._characters.next(_characters);
+      observer.complete();
     })
   }
 }
