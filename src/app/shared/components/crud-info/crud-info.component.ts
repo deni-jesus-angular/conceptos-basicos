@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Characters } from 'src/app/core/interface/characters';
 
 @Component({
   selector: 'app-crud-info',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudInfoComponent  implements OnInit {
 
-  constructor() { }
+  @Input() character:Characters | null=null;
+
+  constructor(
+    
+  ) { }
 
   ngOnInit() {}
 
