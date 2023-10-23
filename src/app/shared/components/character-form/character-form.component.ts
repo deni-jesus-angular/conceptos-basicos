@@ -48,4 +48,8 @@ export class CharacterFormComponent  implements OnInit {
     this.modal.dismiss(this.form.value, 'submit')
   }
 
+  onDelete() {
+    this.modal.dismiss(this.form.value, 'delete')
+  }
+
 }
