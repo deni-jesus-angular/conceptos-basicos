@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorsService } from 'src/app/core/services/authors.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authorsService:AuthorsService
+    ) {}
 
-  ngOnInit() {
+  ngOnInit():void {
+    this.authorsService.getAll().subscribe(authorsService=>{})
   }
 
 }
