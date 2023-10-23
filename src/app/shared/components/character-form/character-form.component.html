@@ -1,3 +1,31 @@
-<p>
-  character-form works!
-</p>
+<ion-header>
+  <ion-buttons slots="start">
+  </ion-buttons>
+  <ion-title>
+    New character
+  </ion-title>
+  <ion-buttons slots="end">
+  </ion-buttons>
+</ion-header>
+<ion-content class="ion-padding">
+  <form>
+    <ion-item>
+      <ion-input label="Name" labelPlacement="start" formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Surname" labelPlacement="start" formControlName="surname" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Source" labelPlacement="start" formControlName="source" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Chapters" labelPlacement="start" formControlName="sourceChapters" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Type of source" labelPlacement="start" formControlName="sourceType" type="text"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-button type="submit" class="ion-padding" expand="full" >Create</ion-button>
+</ion-footer>
