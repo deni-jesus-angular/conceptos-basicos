@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home page
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,20 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-   <ion-button (click)="characters()">Characters</ion-button>
-   <ion-button (click)="about()">About</ion-button>
-  </div>
+  <div class="home">
+    <div id="banner">
+      <img alt="banner" src="./../../../assets/images/banner.jpeg">
+    </div>
+    <div id="container">
+      <ion-button (click)="characters()">
+        see characters
+      </ion-button>
+      <ion-button (click)="about()">
+        about us
+      </ion-button>
+    </div>
+</div>
 </ion-content>
