@@ -41,6 +41,11 @@ export class CrudPage implements OnInit {
         case 'submit' : {
           this.characterService.updateCharacter(info.data).subscribe();
         }
+        break;
+        case 'delete' : {
+          this.characterService.deleteCharacter(info.data).subscribe();
+        }
+        break;
       }
     }
     this.presentForm(character,onDismiss);
