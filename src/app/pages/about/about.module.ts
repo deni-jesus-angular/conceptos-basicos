@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { IonicModule } from '@ionic/angular';
-
 import { AboutPageRoutingModule } from './about-routing.module';
-
 import { AboutPage } from './about.page';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    IonicModule,
-    AboutPageRoutingModule
+    AboutPageRoutingModule,
+    IonicModule, // Agregar esta importación si aún no está importada
+    SharedModule // Agregar el módulo compartido si aún no está importado
   ],
-  declarations: [AboutPage]
+  declarations: [AboutPage], // Declarar el componente AboutPage aquí
 })
 export class AboutPageModule {}

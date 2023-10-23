@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Authors } from 'src/app/core/interface/authors';
+import { AuthorsService } from 'src/app/core/services/authors.service';
 
 @Component({
   selector: 'app-about',
@@ -9,14 +10,11 @@ import { Authors } from 'src/app/core/interface/authors';
 export class AboutPage implements OnInit {
 
   constructor(
-    public authors:Authors[]
+    public authorsService:AuthorsService
     ) {}
 
   ngOnInit():void {
-    this.authors = [
-      {name:"Jesús", surname:"Herrera Sánchez", github:new URL("https://github.com/Jesushs4")},
-      {name:"Denisa Ramona", surname:"Belean", github:new URL("https://github.com/denibel04")}
-    ]
+    this.authorsService.getAll().subscribe(authorsService=>{})
   }
 
 }
