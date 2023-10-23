@@ -40,7 +40,7 @@ export class CharacterService {
         this._characters.next(_characters);
         observer.next(_characters);
       } else {
-        console.log("Character not found");
+        console.error("Character not found");
       }
       observer.complete();
     })
@@ -51,7 +51,7 @@ export class CharacterService {
       var _characters = [...this._characters.value];
       var index = _characters.findIndex(c=>c.id==character.id);
       if (index<0){
-        console.log("Character not found")
+        console.error("Character not found")
       } else {
         _characters = [..._characters.slice(0,index),..._characters.slice(index+1)];
         this._characters.next(_characters);

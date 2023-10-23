@@ -46,6 +46,9 @@ export class CrudPage implements OnInit {
           this.characterService.deleteCharacter(info.data).subscribe();
         }
         break;
+        default: {
+          console.error("Error")
+        }
       }
     }
     this.presentForm(character,onDismiss);
@@ -53,7 +56,15 @@ export class CrudPage implements OnInit {
 
   onNewCharacter() {
     var onDismiss = (info:any) => {
-
+      switch (info.role) {
+        case 'submit': {
+          this.characterService.addCharacter(info.data).subscribe();
+        }
+        break;
+        default: {
+          console.error("Error");
+        } 
+      }
     }
     this.presentForm(null,onDismiss);
   }
