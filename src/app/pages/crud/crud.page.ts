@@ -35,7 +35,14 @@ export class CrudPage implements OnInit {
     })
   }
 
-  onNewUser() {
+  onCharClicked(character:Characters) {
+    var onDismiss = (info:any) => {
+      
+    }
+    this.presentForm(null,onDismiss);
+  }
+
+  onNewCharacter() {
     var onDismiss = (info:any) => {
 
     }
