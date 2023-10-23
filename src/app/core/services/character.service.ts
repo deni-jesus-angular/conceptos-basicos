@@ -10,8 +10,10 @@ import { Characters } from '../interface/characters';
 
 export class CharacterService {
 
-  _characters:BehaviorSubject<Characters[]> = new BehaviorSubject<Characters[]>([]);
-  characters$:Observable<Characters[]> = this._characters.asObservable();
+  id:number = 0;
+
+  private _characters:BehaviorSubject<Characters[]> = new BehaviorSubject<Characters[]>([]);
+  public characters$:Observable<Characters[]> = this._characters.asObservable();
 
   constructor() { }
 
@@ -22,6 +24,7 @@ export class CharacterService {
         {id: 2, name:"Geralt", surname:"De Rivia", source:"The Witcher", sourceType: "TV Series", sourceChapters:31},
         {id: 3, name:"Coco", surname:"", source:"Witch Hat Atelier", sourceType: "Manga", sourceChapters:81},
       ]
+      this.id=3;
       observer.next(_characters);
       this._characters.next(_characters);
       observer.complete();
@@ -54,6 +57,17 @@ export class CharacterService {
         this._characters.next(_characters);
         observer.next(character);
       }
+      observer.complete();
+    })
+  }
+
+  public addCharacter(character:Characters):Observable<Characters> {
+    return new Observable(observer => {
+      var _characters = [...this._characters.value];
+      character.id = ++this.id;
+      _characters.push(character);
+      observer.next(character);
+      this._characters.next(_characters);
       observer.complete();
     })
   }
