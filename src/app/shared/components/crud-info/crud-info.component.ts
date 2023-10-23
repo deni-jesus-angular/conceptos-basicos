@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Characters } from 'src/app/core/interface/characters';
 
 @Component({
   selector: 'app-crud-info',
@@ -7,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudInfoComponent  implements OnInit {
 
-  constructor() { }
+  @Input() character:Characters | null=null;
+
+  @Output() onCharClicked:EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(
+    
+  ) { }
 
   ngOnInit() {}
+
+  onCharClick() {
+    this.onCharClicked.emit();
+  }
 
 }

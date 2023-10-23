@@ -4,11 +4,13 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorsInfoComponent } from './components/authors-info/authors-info.component';
 import { CrudInfoComponent } from './components/crud-info/crud-info.component';
+import { CharacterFormComponent } from './components/character-form/character-form.component';
 
 @NgModule({
   declarations: [
     AuthorsInfoComponent,
-    CrudInfoComponent
+    CrudInfoComponent,
+    CharacterFormComponent,
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,9 @@ import { CrudInfoComponent } from './components/crud-info/crud-info.component';
     CommonModule,
     IonicModule,
     FormsModule,
-    AuthorsInfoComponent
+    AuthorsInfoComponent,
+    CrudInfoComponent,
+    CharacterFormComponent,
   ]
 })
 export class SharedModule { }
