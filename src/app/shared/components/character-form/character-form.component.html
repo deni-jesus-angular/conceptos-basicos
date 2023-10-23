@@ -5,10 +5,10 @@
     </ion-button>
   </ion-buttons>
   <ion-title>
-    New character
+    {{mode=='New'?'New character':'Edit character'}}
   </ion-title>
   <ion-buttons slots="end">
-    <ion-button color="primary" fill="clear" (click)="onDelete()">
+    <ion-button *ngIf="mode=='Edit'" color="primary" fill="clear" (click)="onDelete()">
       <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
     </ion-button>
   </ion-buttons>
@@ -33,5 +33,5 @@
   </form>
 </ion-content>
 <ion-footer>
-  <ion-button type="submit" [disabled]="!form.valid || !form.dirty" class="ion-padding" expand="full" (click)="onSubmit()">Edit</ion-button>
+  <ion-button type="submit" [disabled]="!form.valid || !form.dirty" class="ion-padding" expand="full" (click)="onSubmit()">{{mode=='New'?'Create':'Save'}}</ion-button>
 </ion-footer>
