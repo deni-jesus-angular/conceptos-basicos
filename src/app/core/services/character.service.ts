@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, findIndex } from 'rxjs';
 import { Characters } from '../interface/characters';
 
 @Injectable({
@@ -21,6 +21,21 @@ export class CharacterService {
       ]
       observer.next(_characters);
       this._characters.next(_characters);
+      observer.complete();
+    })
+  }
+
+  public updateCharacter(character:Characters):Observable<Characters[]> {
+    return new Observable(observer => {
+      var _characters = [...this._characters.value];
+      var index = _characters.findIndex( chara => chara.id==character.id);
+      if (index!=-1) {
+        _characters[index] = character;
+        this._characters.next(_characters);
+        observer.next(_characters);
+      } else {
+        console.log("Character not found");
+      }
       observer.complete();
     })
   }

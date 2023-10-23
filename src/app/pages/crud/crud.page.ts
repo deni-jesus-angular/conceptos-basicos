@@ -37,9 +37,13 @@ export class CrudPage implements OnInit {
 
   onCharClicked(character:Characters) {
     var onDismiss = (info:any) => {
-      
+      switch(info.role) {
+        case 'submit' : {
+          this.characterService.updateCharacter(info.data).subscribe();
+        }
+      }
     }
-    this.presentForm(null,onDismiss);
+    this.presentForm(character,onDismiss);
   }
 
   onNewCharacter() {
