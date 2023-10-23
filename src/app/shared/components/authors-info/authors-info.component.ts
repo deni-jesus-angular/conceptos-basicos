@@ -8,7 +8,8 @@ import { Authors } from 'src/app/core/interface/authors';
 })
 export class AuthorsInfoComponent  implements OnInit {
 
-  @Input() authors:Authors | null=null;
+  @Input() author:Authors | null=null;
+
 
   constructor() {}
 
