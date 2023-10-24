@@ -1,5 +1,6 @@
 export interface Authors {
     name:string,
     surname:string,
-    github:URL
+    github:string,
+    photo:URL
 }
