@@ -1,0 +1,12 @@
+.add {
+    position: fixed;
+    bottom: 2rem; // Ajusta la distancia desde la parte inferior según tus necesidades
+    right: 3rem; // Ajusta la distancia desde la derecha según tus necesidades
+    width: 50px; // Ajusta el ancho del botón según tus necesidades
+    height: 50px; // Ajusta la altura del botón según tus necesidades
+    border-radius: 50%; // Hace que el botón sea redondo
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Agrega una sombra al botón
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
