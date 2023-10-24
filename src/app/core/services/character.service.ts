@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, findIndex } from 'rxjs';
+import { BehaviorSubject, Observable, findIndex, lastValueFrom, tap } from 'rxjs';
 import { Characters } from '../interface/characters';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,6 @@ import { HttpClient } from '@angular/common/http';
 
 export class CharacterService {
 
-  id:number = 0;
-
   private _characters:BehaviorSubject<Characters[]> = new BehaviorSubject<Characters[]>([]);
   public characters$:Observable<Characters[]> = this._characters.asObservable();
 
@@ -21,57 +20,34 @@ export class CharacterService {
   ) { }
 
   public getAll():Observable<Characters[]> {
-    return new Observable(observer => {
-      var _characters = [
-        {id: 1, name:"Naruto", surname:"Uzumaki", source:"Naruto Shippuden", sourceType: "Anime", sourceChapters:582},
-        {id: 2, name:"Geralt", surname:"De Rivia", source:"The Witcher", sourceType: "TV Series", sourceChapters:31},
-        {id: 3, name:"Coco", surname:"", source:"Witch Hat Atelier", sourceType: "Manga", sourceChapters:81},
-      ]
-      this.id=3;
-      observer.next(_characters);
-      this._characters.next(_characters);
-      observer.complete();
-    })
+    return this.http.get<Characters[]>(environment.apiUrl+'/characters').pipe(tap(characters=>{
+      this._characters.next(characters);
+    }));
   }
 
-  public updateCharacter(character:Characters):Observable<Characters[]> {
-    return new Observable(observer => {
-      var _characters = [...this._characters.value];
-      var index = _characters.findIndex( chara => chara.id==character.id);
-      if (index!=-1) {
-        _characters[index] = character;
-        this._characters.next(_characters);
-        observer.next(_characters);
-      } else {
-        console.error("Character not found");
-      }
-      observer.complete();
-    })
+  public updateCharacter(character:Characters):Observable<Characters> {
+    return this.http.patch<Characters>(environment.apiUrl+`/characters/${character.id}`, character).pipe(tap(async _=>{
+      await lastValueFrom(this.getAll());
+    }))
   }
 
   public deleteCharacter(character:Characters):Observable<Characters> {
-    return new Observable(observer => {
-      var _characters = [...this._characters.value];
-      var index = _characters.findIndex(c=>c.id==character.id);
-      if (index<0){
-        console.error("Character not found")
-      } else {
-        _characters = [..._characters.slice(0,index),..._characters.slice(index+1)];
-        this._characters.next(_characters);
-        observer.next(character);
-      }
-      observer.complete();
-    })
+    return this.http.delete<any>(environment.apiUrl+`/characters/${character.id}`).pipe(tap(async _=>{
+      await lastValueFrom(this.getAll());
+    }))
   }
 
   public addCharacter(character:Characters):Observable<Characters> {
-    return new Observable(observer => {
-      var _characters = [...this._characters.value];
-      character.id = ++this.id;
-      _characters.push(character);
-      observer.next(character);
-      this._characters.next(_characters);
-      observer.complete();
-    })
+    var _character:any = {
+      name: character.name,
+      surname: character.surname,
+      source: character.source,
+      sourceType: character.sourceType,
+      sourceChapters: character.source,
+    }
+
+    return this.http.post<Characters>(environment.apiUrl+"/characters",_character).pipe(tap(_=>{ 
+      this.getAll().subscribe();
+    }))
   }
 }
