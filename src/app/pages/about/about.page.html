@@ -1,13 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Back to Home</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content class="ion-padding">
-  <div class="authors-panel">
-    <app-authors-info *ngFor="let author of authorsService.authors$ | async " [author]="author"></app-authors-info>
-  </div>
-</ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Back to Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="authors-panel">
+      <app-authors-info *ngFor="let author of authorsService.authors$ | async " [author]="author"></app-authors-info>
+    </div>
+  </ion-content>

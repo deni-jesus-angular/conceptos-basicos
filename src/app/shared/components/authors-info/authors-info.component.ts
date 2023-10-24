@@ -18,5 +18,4 @@ export class AuthorsInfoComponent  implements OnInit {
   public abrirGithub() {
     window.open(this.author?.github, '_blank')
   }
-
 }

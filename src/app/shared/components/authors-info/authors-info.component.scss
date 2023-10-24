@@ -1,0 +1,65 @@
+ion-card-header {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+ion-avatar {
+    width: 50%;
+    height: 50%;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+ion-card-content {
+    text-align: center;
+}
+
+ion-button {
+    --background: #f19ca3;
+    --background-hover: #b64a5a;
+    width: 14rem;
+    padding: 1rem;
+    margin-top: 20px;
+}
+
+@keyframes bounce {
+
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+ion-card {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    color: white;
+}
+
+ion-card:hover {
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+}
