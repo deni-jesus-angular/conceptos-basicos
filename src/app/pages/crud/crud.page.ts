@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController} from '@ionic/angular';
 import { Characters } from 'src/app/core/interface/characters';
 import { CharacterService } from 'src/app/core/services/character.service';
 import { CharacterFormComponent } from 'src/app/shared/components/character-form/character-form.component';
@@ -46,6 +46,9 @@ export class CrudPage implements OnInit {
           this.characterService.deleteCharacter(info.data).subscribe();
         }
         break;
+        default: {
+          console.error("Error")
+        }
       }
     }
     this.presentForm(character,onDismiss);
@@ -53,7 +56,15 @@ export class CrudPage implements OnInit {
 
   onNewCharacter() {
     var onDismiss = (info:any) => {
-
+      switch (info.role) {
+        case 'submit': {
+          this.characterService.addCharacter(info.data).subscribe();
+        }
+        break;
+        default: {
+          console.error("Error");
+        } 
+      }
     }
     this.presentForm(null,onDismiss);
   }
