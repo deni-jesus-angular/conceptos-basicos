@@ -1,23 +1,17 @@
+<div class="wrapper">
 <ion-card button (click)="onCharClick()">
   <ion-card-header>
-    <div style="display:flex;margin:10px;align-items:flex-end ">
+    <div style="display: flex; flex-direction: column; margin: 10px; align-items: center">
       <ion-avatar>
-        <img alt="character photo" src="{{character?.characterPhoto}}" />
+        <img alt="character photo" src="{{ character?.characterPhoto }}" />
       </ion-avatar>
-      <div class="ion-margin-start user-name" color="tertiary" >{{character?.name | titlecase}} from {{character?.source}}</div>
-      
+      <div class="ion-margin-start user-name">
+        <h1>{{ character?.name | titlecase }} {{ character?.surname | titlecase }}</h1> <h3>from {{ character?.source }}</h3>
+      </div>
     </div>
-    
-    
   </ion-card-header>
   <ion-card-content>
-        <h2>Name</h2>
-        <ion-text color="medium" class="ion-margin-start">{{character?.name}}</ion-text>
-        <h2>Surname</h2>
-        <ion-text color="medium" class="ion-margin-start">{{character?.surname}}</ion-text>
-        <h2>Source and chapters</h2>
-        <ion-text color="medium" class="ion-margin-start">{{character?.source}} with {{character?.sourceChapters}} chapters</ion-text>
-        <h2>Type of source</h2>
-        <ion-text color="medium" class="ion-margin-start">{{character?.sourceType}}</ion-text>
+    
   </ion-card-content>
 </ion-card>
+</div>

@@ -68,7 +68,5 @@ export class CrudPage implements OnInit {
     }
     this.presentForm(null,onDismiss);
   }
-
-  
   }
 
