@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, findIndex } from 'rxjs';
 import { Characters } from '../interface/characters';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,9 @@ export class CharacterService {
   private _characters:BehaviorSubject<Characters[]> = new BehaviorSubject<Characters[]>([]);
   public characters$:Observable<Characters[]> = this._characters.asObservable();
 
-  constructor() { }
+  constructor(
+    private http:HttpClient,
+  ) { }
 
   public getAll():Observable<Characters[]> {
     return new Observable(observer => {
