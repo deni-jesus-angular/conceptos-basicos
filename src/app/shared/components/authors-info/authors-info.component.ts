@@ -15,4 +15,8 @@ export class AuthorsInfoComponent  implements OnInit {
 
   ngOnInit():void {}
 
+  public abrirGithub() {
+    window.open(this.author?.github, '_blank')
+  }
+
 }
