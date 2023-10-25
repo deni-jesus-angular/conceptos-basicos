@@ -1,17 +1,19 @@
 <ion-header>
-  <ion-buttons slots="start">
+  <ion-toolbar>
+  <ion-buttons slot="start">
     <ion-button color="primary" fill="clear" (click)="onCancel()">
       <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>
+  <ion-title style="text-align: center;">
     {{mode=='New'?'New character':'Edit character'}}
   </ion-title>
-  <ion-buttons slots="end">
+  <ion-buttons slot="end">
     <ion-button *ngIf="mode=='Edit'" color="primary" fill="clear" (click)="onDelete()">
       <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
     </ion-button>
   </ion-buttons>
+</ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
@@ -20,6 +22,9 @@
     </ion-item>
     <ion-item>
       <ion-input label="Surname" labelPlacement="start" formControlName="surname" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Description (optional)" labelPlacement="start" formControlName="description" type="text"  maxlength="350"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input label="Source" labelPlacement="start" formControlName="source" type="text"></ion-input>
