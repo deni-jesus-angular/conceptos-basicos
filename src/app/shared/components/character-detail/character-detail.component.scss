@@ -1,0 +1,61 @@
+#character-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-avatar {
+    flex: 1;
+    max-width: 45%;
+    height: 250px;
+    width: 250px;
+}
+
+
+.user-info {
+    flex: 1;    
+    padding: 0 20px;
+}
+
+h1 {
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+p {
+    text-align: justify;
+    font-size: 14px;
+}
+
+#source-info {
+    width: 100%;
+    padding-top: 2rem;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    table, th, td {
+        border: 1px solid transparent;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 10px;
+        height: 4rem;
+    }
+    
+    th {
+        color: var(--ion-color-primary);
+        background-color: var(--ion-color-step-200); /* Color de fondo para las celdas superiores */
+    }
+    
+    td:first-child {
+        border-right: 3px solid var(--ion-color-step-200); /* Bordes verticales interiores */
+    }
+    
+    td:nth-child(2) {
+        border-right: 3px solid var(--ion-color-step-200); /* Bordes verticales interiores */
+    }
+}
