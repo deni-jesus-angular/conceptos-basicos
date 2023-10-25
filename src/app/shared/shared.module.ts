@@ -5,12 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorsInfoComponent } from './components/authors-info/authors-info.component';
 import { CrudInfoComponent } from './components/crud-info/crud-info.component';
 import { CharacterFormComponent } from './components/character-form/character-form.component';
+import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
     AuthorsInfoComponent,
     CrudInfoComponent,
     CharacterFormComponent,
+    CharacterDetailComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { CharacterFormComponent } from './components/character-form/character-fo
     AuthorsInfoComponent,
     CrudInfoComponent,
     CharacterFormComponent,
+    CharacterDetailComponent
   ]
 })
 export class SharedModule { }

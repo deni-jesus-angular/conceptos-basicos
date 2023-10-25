@@ -12,7 +12,8 @@
     <app-crud-info
       *ngFor="let character of (characterService.characters$ | async)"
       [character]="character"
-      (click)="onCharClicked(character)"
+      (onCharClicked)="onCharClicked(character)"
+      (onEditClicked)="onEditClicked(character)"
     >
     </app-crud-info>
   </div>

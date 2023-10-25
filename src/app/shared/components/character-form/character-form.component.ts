@@ -25,7 +25,7 @@ export class CharacterFormComponent  implements OnInit {
     }
   }
   constructor(
-    private modal: ModalController,
+    private formModal: ModalController,
     private formBuilder: FormBuilder,
   ) { 
     this.form = this.formBuilder.group({
@@ -41,15 +41,15 @@ export class CharacterFormComponent  implements OnInit {
   ngOnInit() {}
 
   onCancel() {
-    this.modal.dismiss(null, 'cancel')
+    this.formModal.dismiss(null, 'cancel')
   }
 
   onSubmit() {
-    this.modal.dismiss(this.form.value, 'submit')
+    this.formModal.dismiss(this.form.value, 'submit')
   }
 
   onDelete() {
-    this.modal.dismiss(this.form.value, 'delete')
+    this.formModal.dismiss(this.form.value, 'delete')
   }
 
 }

@@ -23,6 +23,7 @@ export class CharacterService {
         {id: 1, name:"Naruto", surname:"Uzumaki", source:"Naruto Shippuden", sourceType: "Anime", sourceChapters:582, characterPhoto: new URL("https://i.pinimg.com/1200x/ee/61/37/ee61374e60f036d0d605c37b3a7bee8a.jpg")},
         {id: 2, name:"Geralt", surname:"De Rivia", source:"The Witcher", sourceType: "TV Series", sourceChapters:31, characterPhoto: new URL("https://acortar.link/qjSoZ4")},
         {id: 3, name:"Coco", surname:"", source:"Witch Hat Atelier", sourceType: "Manga", sourceChapters:81, characterPhoto: new URL("https://ramenparados.com/wp-content/uploads/2021/05/1622290109162-scaled.jpg")},
+        {id: 4, name:"Scott", surname:"Pilgrim", source:"Scott Pilgrim vs the world", sourceType: "Comic", sourceChapters:6, characterPhoto: new URL("https://i.pinimg.com/474x/e7/5f/20/e75f20862542dca6a5c254f0f48975cd.jpg")},
       ]
       this.id=3;
       observer.next(_characters);

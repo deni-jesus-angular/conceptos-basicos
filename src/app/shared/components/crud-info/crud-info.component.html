@@ -1,17 +1,22 @@
-<div class="wrapper">
-<ion-card button (click)="onCharClick()">
-  <ion-card-header>
+<ion-card  button (click)="onCharClick()">
+  <ion-toolbar color="1c1c1d">
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="clear" (click)="onEditClick($event)">
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <ion-card-content >
     <div style="display: flex; flex-direction: column; margin: 10px; align-items: center">
-      <ion-avatar>
+      <ion-avatar >
         <img alt="character photo" src="{{ character?.characterPhoto }}" />
       </ion-avatar>
       <div class="ion-margin-start user-name">
         <h1>{{ character?.name | titlecase }} {{ character?.surname | titlecase }}</h1> <h3>from {{ character?.source }}</h3>
       </div>
     </div>
-  </ion-card-header>
-  <ion-card-content>
-    
   </ion-card-content>
 </ion-card>
-</div>
+
+

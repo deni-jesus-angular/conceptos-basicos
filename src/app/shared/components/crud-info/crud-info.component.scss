@@ -15,8 +15,8 @@ ion-card-header {
 
 ion-card {
     margin:20px;
-    height: 20rem;
-    width: 25rem;
+    height: 22rem;
+    width: 18rem;
 }
 
 ion-avatar {
@@ -24,6 +24,8 @@ ion-avatar {
     height: 150px;
     max-width: 400px;
     max-height: 400px;
+    margin-bottom: 20px;
+    margin-top: -20px;
 }
 
 ion-card-content {
