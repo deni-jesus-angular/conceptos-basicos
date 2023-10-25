@@ -41,6 +41,7 @@ export class CharacterService {
     var _character:any = {
       name: character.name,
       surname: character.surname,
+      description: character.description,
       source: character.source,
       sourceType: character.sourceType,
       sourceChapters: character.source,
