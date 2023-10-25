@@ -19,19 +19,21 @@ export class CharacterFormComponent  implements OnInit {
       this.form.controls['id'].setValue(_character.id);
       this.form.controls['name'].setValue(_character.name);
       this.form.controls['surname'].setValue(_character.surname);
+      this.form.controls['description'].setValue(_character.description);
       this.form.controls['source'].setValue(_character.source);
       this.form.controls['sourceType'].setValue(_character.sourceType);
       this.form.controls['sourceChapters'].setValue(_character.sourceChapters);
     }
   }
   constructor(
-    private modal: ModalController,
+    private formModal: ModalController,
     private formBuilder: FormBuilder,
   ) { 
     this.form = this.formBuilder.group({
       id:[null],
       name:['', [Validators.required]],
       surname:['', [Validators.required]],
+      description:[''],
       source:['', [Validators.required]],
       sourceType:['', [Validators.required]],
       sourceChapters:[0, [Validators.required]],
@@ -41,15 +43,15 @@ export class CharacterFormComponent  implements OnInit {
   ngOnInit() {}
 
   onCancel() {
-    this.modal.dismiss(null, 'cancel')
+    this.formModal.dismiss(null, 'cancel')
   }
 
   onSubmit() {
-    this.modal.dismiss(this.form.value, 'submit')
+    this.formModal.dismiss(this.form.value, 'submit')
   }
 
   onDelete() {
-    this.modal.dismiss(this.form.value, 'delete')
+    this.formModal.dismiss(this.form.value, 'delete')
   }
 
 }

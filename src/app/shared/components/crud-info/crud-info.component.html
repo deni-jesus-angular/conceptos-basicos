@@ -1,27 +1,22 @@
-<ion-card button (click)="onCharClick()">
-  <ion-card-header>
-    <div style="display:flex;margin:10px;align-items:flex-end ">
-      <ion-avatar>
-        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+<ion-card  button (click)="onCharClick()">
+  <ion-toolbar color="1c1c1d">
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="clear" (click)="onEditClick($event)">
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <ion-card-content >
+    <div style="display: flex; flex-direction: column; margin: 10px; align-items: center">
+      <ion-avatar >
+        <img alt="character photo" src="{{ character?.characterPhoto }}" />
       </ion-avatar>
-      <div class="ion-margin-start user-name" color="tertiary" >{{character?.name | titlecase}} from {{character?.source}}</div>
-      
+      <div class="ion-margin-start user-name">
+        <h1>{{ character?.name | titlecase }} {{ character?.surname | titlecase }}</h1> <h3>from {{ character?.source }}</h3>
+      </div>
     </div>
-    
-    
-  </ion-card-header>
-  <ion-card-content>
-    <ion-item>
-      <ion-label>
-        <h3>Name</h3>
-        <ion-text color="medium" class="ion-margin-start">{{character?.name}}</ion-text>
-        <h3>Surname</h3>
-        <ion-text color="medium" class="ion-margin-start">{{character?.surname}}</ion-text>
-        <h3>Source and chapters</h3>
-        <ion-text color="medium" class="ion-margin-start">{{character?.source}} with {{character?.sourceChapters}} chapters</ion-text>
-        <h3>Type of source</h3>
-        <ion-text color="medium" class="ion-margin-start">{{character?.sourceType}}</ion-text>
-      </ion-label>
-    </ion-item>
   </ion-card-content>
 </ion-card>
+
+

@@ -1,0 +1,35 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button color="primary" fill="clear" (click)="onCancel()">
+      <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title> </ion-title>
+  
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+  <div id="character-info">
+    <ion-avatar >
+      <img alt="character photo" src="{{ character?.characterPhoto }}" />
+    </ion-avatar>
+    <div class="ion-margin-start user-info">
+      <h1>{{ character?.name | titlecase }} {{ character?.surname | titlecase }}</h1> 
+      <p> {{ character?.description }}</p>
+    </div>
+  </div>  
+  <div id="source-info">
+    <table>
+      <tr>
+          <th>Source Type</th>
+          <th>Name</th>
+          <th>Chapters</th>
+      </tr>
+      <tr>
+          <td>{{ character?.sourceType | titlecase }}</td>
+          <td>{{ character?.source | titlecase }}</td>
+          <td>{{ character?.sourceChapters  }}</td>
+      </tr>
+  </table>
+  </div>
+</ion-content>
