@@ -4,5 +4,6 @@ export interface Characters {
     surname: string,
     source: string,
     sourceType: string,
-    sourceChapters : number
+    sourceChapters : number,
+    characterPhoto :URL
 }

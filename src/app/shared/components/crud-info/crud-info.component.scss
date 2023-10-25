@@ -1,0 +1,33 @@
+ion-card-header {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.user-name h1 {
+    color: var(--ion-color-primary);
+    font-size: xx-large;
+}
+
+.user-name h3 {
+    font-size: large;
+}
+
+ion-card {
+    margin:20px;
+    height: 22rem;
+    width: 18rem;
+}
+
+ion-avatar {
+    width: 150px;
+    height: 150px;
+    max-width: 400px;
+    max-height: 400px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+ion-card-content {
+    text-align: center;
+}
