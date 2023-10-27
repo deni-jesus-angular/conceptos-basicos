@@ -6,13 +6,15 @@ import { AuthorsInfoComponent } from './components/authors-info/authors-info.com
 import { CrudInfoComponent } from './components/crud-info/crud-info.component';
 import { CharacterFormComponent } from './components/character-form/character-form.component';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
+import { SelectablePictureComponent } from './components/selectable-picture/selectable-picture.component';
 
 @NgModule({
   declarations: [
     AuthorsInfoComponent,
     CrudInfoComponent,
     CharacterFormComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    SelectablePictureComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { CharacterDetailComponent } from './components/character-detail/characte
     AuthorsInfoComponent,
     CrudInfoComponent,
     CharacterFormComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    
   ]
 })
 export class SharedModule { }
