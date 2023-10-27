@@ -34,7 +34,11 @@
       <ion-input label="Chapters" labelPlacement="start" formControlName="sourceChapters" type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Type of source" labelPlacement="start" formControlName="sourceType" type="text"></ion-input>
+      <select formControlName="sourceType">
+        <option [ngValue]="'Anime'">Anime</option>
+        <option [ngValue]="'Manga'">Manga</option>
+        <option [ngValue]="'TV Series'">TV Series</option>
+      </select>
     </ion-item>
   </form>
 </ion-content>
