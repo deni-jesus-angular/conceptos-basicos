@@ -18,6 +18,7 @@ export class CharacterFormComponent  implements OnInit {
       this.mode = 'Edit';
       this.form.controls['id'].setValue(_character.id);
       this.form.controls['name'].setValue(_character.name);
+      this.form.controls['picture'].setValue(_character.picture);
       this.form.controls['surname'].setValue(_character.surname);
       this.form.controls['description'].setValue(_character.description);
       this.form.controls['source'].setValue(_character.source);
@@ -31,6 +32,7 @@ export class CharacterFormComponent  implements OnInit {
   ) { 
     this.form = this.formBuilder.group({
       id:[null],
+      picture:[''],
       name:['', [Validators.required]],
       surname:['', [Validators.required]],
       description:[''],
